@@ -1,0 +1,24 @@
+[metadata]
+name = "ssh"
+description = "List and preview SSH Hosts"
+requirements = ["ssh", "awk", "bat", "grep"]
+
+[source]
+command = "grep -Rh -e '^Host ' ~/.ssh/config.d/ | awk '{print $2}'"
+
+[preview]
+command = "awk '/{}/' RS= ~/.ssh/config.d/* | bat -l ssh_config --plain --color=always --style=grid --line-range :300"
+
+[keybindings]
+enter = "actions:connect"
+ctrl-u = "actions:update"
+
+[actions.connect]
+description = "Connect to selected host"
+command = "ssh {}"
+mode = "execute"
+
+[actions.update]
+description = "Executes updating script"
+command = "~/.ssh/scripts/update"
+mode = "execute"
