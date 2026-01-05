@@ -6,7 +6,7 @@
 
 Ajouter notre dépôt en inputs:
 ```
-sshtui = {
+television-ssh = {
   url = "github:gfriloux/television-ssh-flake";
   inputs.nixpkgs.follows = "nixpkgs";
 };
