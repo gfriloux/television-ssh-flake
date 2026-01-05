@@ -22,6 +22,9 @@
       snowfall = {
         namespace = "television-ssh";
       };
+      alias = {
+        modules.home.default = "television-ssh";
+      };
     };
 
 }
