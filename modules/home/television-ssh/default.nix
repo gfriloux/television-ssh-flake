@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 let
-  cfg = config.television-ssh.default;
+  cfg = config.television-ssh.hm;
 in
 {
   options.television-ssh.hm = {
