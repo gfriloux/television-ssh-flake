@@ -1,10 +1,10 @@
 { config, lib, pkgs, ... }:
 
 let
-  cfg = config.television-ssh.hm;
+  cfg = config.programs.television-ssh;
 in
 {
-  options.television-ssh.hm = {
+  options.programs.television-ssh = {
     enable = lib.mkEnableOption "Enable television-ssh home-manager modules globally";
   };
 
