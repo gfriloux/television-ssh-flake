@@ -11,7 +11,7 @@ command = "awk '/{}/' RS= ~/.ssh/config.d/* | bat -l ssh_config --plain --color=
 
 [keybindings]
 enter = "actions:connect"
-ctrl-u = "actions:update"
+ctrl-u = ["actions:update","reload_source"]
 
 [actions.connect]
 description = "Connect to selected host"
