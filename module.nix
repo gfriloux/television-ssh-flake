@@ -13,6 +13,6 @@ in
       enable = true;
     };
 
-    xdg.configFile."television/cable/ssh.toml".source = ../../../ssh.toml;
+    xdg.configFile."television/cable/ssh.toml".source = ./ssh.toml;
   };
 }
