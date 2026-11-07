@@ -6,10 +6,7 @@
 
 Ajouter notre dépôt en inputs:
 ```
-television-ssh = {
-  url = "github:gfriloux/television-ssh-flake";
-  inputs.nixpkgs.follows = "nixpkgs";
-};
+television-ssh.url = "github:gfriloux/television-ssh-flake";
 ```
 
 Ensuite dans votre config `home-manager`:
