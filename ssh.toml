@@ -7,7 +7,7 @@ requirements = ["ssh", "awk", "find", "bat", "grep"]
 command = "grep -Rh -e '^Host ' ~/.ssh/ | awk '$2 != \"*\" {print $2}'"
 
 [preview]
-command = "awk '/{}/' RS= $(find ~/.ssh -path ~/.ssh/config -o -path ~/.ssh/config.d/'*' -type f 2>/dev/null) | bat -l ssh_config --plain --color=always --style=grid --line-range :300"
+command = "awk -v host='{}' '$0 ~ host' RS= $(find ~/.ssh \\( -path ~/.ssh/config -o -path ~/.ssh/config.d/'*' \\) -type f 2>/dev/null) | bat -l ssh_config --plain --color=always --style=grid --line-range :300"
 
 [keybindings]
 enter = "actions:connect"
@@ -15,7 +15,7 @@ ctrl-u = ["actions:update","reload_source"]
 
 [actions.connect]
 description = "Connect to selected host"
-command = "ssh {}"
+command = "ssh '{}'"
 mode = "execute"
 
 [actions.update]
